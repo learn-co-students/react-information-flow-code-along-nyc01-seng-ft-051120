@@ -11,11 +11,15 @@ class Parent extends Component {
     }
   }
 
+  color = () => {
+    this.setState({ color: getRandomColor() })
+  }
+
   render() {
     return (
       <div className="parent" style={{backgroundColor: this.state.color}}>
-        <Child />
-        <Child />
+        <Child color={this.color}/>
+        <Child color={this.color}/>
       </div>
     )
   }
